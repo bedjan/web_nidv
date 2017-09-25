@@ -181,6 +181,15 @@ ul
 </head>
 
 <body lang=CS>
+
+<?php if($_GET["heslo"] != "1a2b3c"): ?>
+    <!--přihlaąovací formulář -->
+    <form>
+        Zadej heslo: <input type="password" name="heslo">
+        <input type="submit">
+    </form>
+<? else: ?>
+
 <p id="nahoru"></p>
 <a href="#dolu">Dolů</a>
 
@@ -3171,6 +3180,8 @@ v&nbsp;předmětu, škole nebo doma….:-))</span></p>
 </div>
 <a href="#nahoru">Nahoru</a>
 <p id="dolu"></p>
+
+<? endif ?>
 </body>
 
 </html>
