@@ -176,6 +176,77 @@ div.Section1
 ul
 	{margin-bottom:0cm;}
 -->
+
+
+ /* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+	font-size: 12px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 800px;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 2px 6px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+} 
+
+
+ /* The navigation bar */
+.navbar {
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+	left:30%;
+    width: auto; /* Full width */
+}
+
+/* Links inside the navbar */
+.navbar a {
+    float: left;
+  
+}
+
+/* Main content */
+.main {
+    float: left;
+    margin-top: 30px; /* Add a top margin to avoid content overlay */
+} 
+
 </style>
 
 </head>
@@ -191,27 +262,56 @@ ul
     </form>
 <? else: ?>
 
-<div style="position: fixed;top:2%;right:5%;width: auto;background-color:grey;color:#ffffff">
-<a href="#nahoru">Začátek</a>
-</div>
 
-<div style="position: fixed;top:6%;right:5%;width: auto;background-color:grey;color:#ffffff">
-<a href="#dolu">Konec</a>
-</div>
-
-<div style="position: fixed;bottom:2%;right:1%;width:50%;background-color:white;color:#000000">	
 <p id="nahoru">
-<p><a href="http://moodle.nidv.cz/" target="_blank">NIDV moodle</a><a href="https://www.seznam.cz/" target="_blank">  Seznam.cz</a></p>
-<hr color="black"> 
 
-<p><strong>Pedagogika přehled okruhů:  </strong><a href="#okruhy">  Pedagogika - Okruhy pro závěrečné zkoušky 2017/2018</a><a href="#0">  0. Tři pilíře úspěšného pedagoga - O čem to je, aneb proč to učitelům ve škole nejde</a><a href="#1">  1. Pedagogika její předmět a zák.ped. disciplíny</a><a href="#2">  2. Nejvýznamnější problémy současné pedagogiky, kurikulární reforma, alternativní školy.</a><a href="#3">  3. Výchovně vzdělávací metody</a><a href="#4">  4.Organizační formy výuky či vzdělávání (OFV) </a><a href="#5">  5. Didaktické zásady ve výuce,význam,realizace </a>
+<div class="navbar">
+
+
+<div class="dropdown">
+  <button class="dropbtn">Pedagogika</button>
+  <div class="dropdown-content">
+  <p>
+<a href="#okruhy"><strong>Okruhy</strong> - pro závěrečné zkoušky 2017/2018</a>
+<a href="#0"><strong>0.</strong>  Tři pilíře úspěšného pedagoga - O čem to je, aneb proč to učitelům ve škole nejde</a>
+<a href="#1"><strong>1.</strong>  Pedagogika její předmět a zák.ped. disciplíny</a>
+<a href="#2"><strong>2.</strong>  Nejvýznamnější problémy současné pedagogiky, kurikulární reforma, alternativní školy.</a>
+<a href="#3"><strong>3.</strong>  Výchovně vzdělávací metody</a>
+<a href="#4"><strong>4.</strong>  Organizační formy výuky či vzdělávání (OFV) </a>
+<a href="#5"><strong>5.</strong>  Didaktické zásady ve výuce,význam,realizace </a>
 </p>
-<hr color="black"> 
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="dropbtn">Psychologie</button>
+  <div class="dropdown-content">
+<p>dočkej času ;-)<p/>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Obecně</button>
+  <div class="dropdown-content">
+<a href="http://moodle.nidv.cz/" target="_blank">NIDV moodle</a>
+<a href="https://www.seznam.cz/" target="_blank">Seznam.cz</a>
+  </div>
+</div>
+
 </div>
 
 
-<div class=Section1>
+<div style="position: fixed;bottom:6%;right:5%;width: auto;background-color:#4CAF50;color:#ffffff">
+<a href="#nahoru">Nahoru</a>
+</div>
+<div style="position: fixed;bottom:2%;right:5%;width: auto;background-color:#4CAF50;color:#ffffff">
+<a href="#dolu">Dolu</a>
+</div>
 
+</div>
+
+<div class="main">
+<div class=Section1>
+<p id="okruhy">
 <h2><b><u><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Pedagogika
 - </span></u></b><u><span style='font-size:11.0pt;font-family:"Calibri","sans-serif"'>Okruhy
 pro závěrečné zkoušky 2017/2018</span></u></h2>
@@ -3178,6 +3278,7 @@ v&nbsp;předmětu, škole nebo doma….:-))</span></p>
 
 </div>
 
+</div>
 <p id="dolu"></p>
 
 <? endif ?>
