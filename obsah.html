@@ -262,6 +262,39 @@ ul
     </form>
 <? else: ?>
 
+	
+	<?php // odkazy na konkretni dny
+$selected_days[2009][2][24] = true;
+$selected_days[2009][2][27] = true;
+$selected_days[2009][3][5]  = true;
+$selected_days[2009][3][17] = true;
+$selected_days[2009][4][20] = true;
+
+// prvotni inicializace, nastavime aktualni cas,  mesic a rok
+$date = time();
+$day = date('d', $date);
+$month = date('m', $date);
+$year = date('Y', $date);
+ 
+ 
+// pokud v GETu existuje mesic ci rok, tak "aktualni" mesic a rok je ten z URL
+if ($_GET["year"]) $year = (int) $_GET["year"];
+if ($_GET["month"]) $month = (int) $_GET["month"];
+ 
+// pro dalsi zobrazeni potrebujeme prvni den v mesici, pocet dni v mesici ...
+$first_day = mktime(0,0,0,$month, 1, $year);
+$title = date('n', $first_day);
+$day_of_week = date('D', $first_day);
+$days_in_month = date('t', $first_day);
+ 
+ 
+// ceske mesice
+$cz_months = array( 
+                     1 =?>
+"Leden", "Únor", "Březen", "Duben", "Květen", "Červen", "Červenec", "Srpen", "Září", "Říjen", "Listopad", "Prosinec" ); $prevY = $nextY = $year; $prevM = $nextM = $month; // nastaveni odkazu pro predchozi a nasledujici mesic / rok if ($month - 1 12){ $nextM = 1; $nextY++;} else {$nextM = $month + 1;}; $prev = "["; $next = "](?month=".($prevM)."&year=".($prevY).") [>>](?month=".($nextM)."&year=".($nextY).")"; // timto si vyplnime v kalendari prazdne bunky, 1 den v mesici a prvniho neni vzdy pondeli ... $emptyTD = array("Mon" => 0, "Tue" => 1, "Wed" => 2, "Thu" => 3, "Fri" => 4, "Sat" => 5, "Sun" => 6); $blank = $emptyTD[$day_of_week]; // vykresleni kalendare echo "
+ 
+<table align="center" border="1" id="calendar">"; echo "<tr><th>$prev</th><th colspan="5"> ".$cz_months[$title]." $year</th><th>$next</th></tr>"; echo "<tr><td width="42">M</td><td width="42">T</td><td width="42">W</td><td width="42">T</td><td width="42">F</td><td width="42">S</td><td width="42">S</td></tr>"; $day_count = 1; echo "<tr>"; // zde prave zjistime pocet prazdnych bunek pred 1 dnem v mesici while ( $blank > 0 ) { echo "<td></td>"; $blank--; $day_count++; } $day_num = 1; // veskere dny v kalendari while ($day_num **[$day_num](?year=$year&month=$month&day=$day_num)**"; } else { echo "<td class="days">[$day_num](?year=$year&month=$month&day=$day_num)</td>"; } } else { echo "<td class="days">$day_num</td>"; } $day_num++; $day_count++; if ($day_count > 7) { echo "</tr><tr>"; $day_count = 1; } } // timto zajistime spravne zobrazeni kalendare a dopocitani prazdnych bunek while ($day_count >1 && $day_count "; $day_count++; } echo "</tr></table>"; ?>
+	
 
 <p id="nahoru">
 
