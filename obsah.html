@@ -254,10 +254,11 @@ ul
 <body lang=CS>
 <a href="http://www.naplanuj-to.cz" id="kalendarNT">Kalendář</a>
 
-<?php
+	<p>Dnes je</p>
+	<?php
 SetLocale(LC_ALL, "Czech");
 $datum = StrFTime("%d.%m.%Y %H:%M;
-echo "Dnes je "($datum);
+echo ($datum);
 ?>
 	
 <?php if($_GET["heslo"] != "1a2b3c"): ?>
