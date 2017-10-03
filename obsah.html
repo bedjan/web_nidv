@@ -253,8 +253,11 @@ ul
 
 <body lang=CS>
 <a href="http://www.naplanuj-to.cz" id="kalendarNT">Kalendář</a>
-<script src="http://www.naplanuj-to.cz/zdarma-na-web/kalendar/kalendar.js.php?key=aec3f7&amp;nameday=1&amp;week=1&amp;color=green&amp;text=black" charset="utf-8"></script>
-
+<?php
+SetLocale(LC_ALL, "Czech");
+$datum = StrFTime("%d/%c/%Y %H:%M:%S %z %B", Time());
+echo($datum);
+?>
 <?php if($_GET["heslo"] != "1a2b3c"): ?>
     <!--přihlaąovací formulář -->
     <form>
@@ -3308,6 +3311,7 @@ v&nbsp;předmětu, škole nebo doma….:-))</span></p>
 
 </div>
 
+&copy; <?php echo date("Y");?>
 
 <? endif ?>
 </body>
