@@ -252,13 +252,11 @@ ul
 </head>
 
 <body lang=CS>
-<a>Datum: </p>
 
-	<?php
-SetLocale(LC_ALL, "Czech");
-$datum = StrFTime("%d.%m.%Y %H:%M:%S, Time());
-echo($datum);
+<?php
+echo StrFTime("Datum: %d.%m.%Y, čas: %H hodin %M minut %S sekund", Time());
 ?>
+
 	
 <?php if($_GET["heslo"] != "1a2b3c"): ?>
     <!--přihlaąovací formulář -->
